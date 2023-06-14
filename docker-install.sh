@@ -34,9 +34,6 @@ VALIDATE $? "Starting Docker"
 systemctl enable docker &>>$LOG
 VALIDATE $? "Enabling Docker"
 
-usermod -a -G docker naveen_kumar_reddy_nallakalva &>>$LOG
-VALIDATE $? "Added naveen_kumar_reddy_nallakalva to docker group"
-
 yum install git -y &>>$LOG
 VALIDATE $? "Installing GIT"
 
