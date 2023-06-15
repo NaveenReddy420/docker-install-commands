@@ -35,7 +35,8 @@ systemctl enable docker &>>$LOG
 VALIDATE $? "Enabling Docker"
 
 usermod -a -G docker ec2-user &>>$LOG
-VALIDATE $? "Added ec2-user to docker group"									 
+VALIDATE $? "Added ec2-user to docker group"
+
 yum install git -y &>>$LOG
 VALIDATE $? "Installing GIT"
 
