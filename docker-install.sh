@@ -25,7 +25,7 @@ VALIDATE(){
 yum update  -y &>>$LOG
 VALIDATE $? "Updating packages"
 
-yum install docker -y &>>$LOG
+amazon-linux-extras install docker -y &>>$LOG
 VALIDATE $? "Installing Docker"
 
 service docker start &>>$LOG
@@ -40,7 +40,7 @@ VALIDATE $? "Added ec2-user to docker group"
 yum install git -y &>>$LOG
 VALIDATE $? "Installing GIT"
 
-curl -L sudo curl -L "https://github.com/docker/compose/releases/download/v2.12.2/docker-compose-$(uname -s)-$(uname -m)"  -o /usr/local/bin/docker-compose &>>$LOG
+curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose &>>$LOG
 VALIDATE $? "Downloaded docker-compose"
 
 chmod +x /usr/local/bin/docker-compose
